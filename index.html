@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Maan's Bookshelf</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <h1>Maan's Bookshelf</h1>
+          <form method="" class="search-field">
+            <input type="text" name="search" id="inputSearch" placeholder="Masukkan Judul Buku" />
+            <button type="submit" id="searchButton" class="btn" title="Cari buku">
+              <span class="fa-solid fa-magnifying-glass">Cari</span>
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="col col-30">
+          <div class="card">
+            <h2 class="card-title">Tambah Buku</h2>
+            <form id="formAddBook" action="" class="input-form">
+              <div class="input-field">
+                <label for="title">Judul Buku</label>
+                <input type="text" name="title" id="title" required />
+              </div>
+              <div class="input-field">
+                <label for="author">Penulis Buku</label>
+                <input type="text" name="author" id="author" required />
+              </div>
+              <div class="input-field">
+                <label for="Year">Tahun Publikasi Buku</label>
+                <input type="number" name="Year" id="year" required />
+              </div>
+              <div class="input-field-inline">
+                <input type="checkbox" name="isComplete" id="isComplete" />
+                <label for="isComplete">Telah selesai dibaca</label>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-plus"></i>
+                Masukkan Buku Ke Rak
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col col-70">
+          <div id="deleteBookModal" class="modal" hidden>
+            <div class="modal-header">
+              <span data-modal="title" class="modal-title">Hapus Buku Ini?</span>
+              <button data-modal="btnDismiss" class="btn icon-btn">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <!-- <div class="modal-body">
+              <p>
+                Anda yakin ingin menghapus buku yang berjudul
+                <strong data-modal="bookTitle"></strong>?
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button data-modal="btnCancel" class="btn btn-primary">Tidak</button>
+              <button data-modal="btnDelete" class="btn btn-danger-outline">Ya, hapus buku</button>
+            </div> -->
+          </div>
+          <section class="card">
+            <h2 class="card-title">Belum selesai Dibaca</h2>
+            <div id="inCompleted" class="book-items"></div>
+            <div class="inCompleted"></div>
+          </section>
+          <section class="card">
+            <h2 class="card-title">Telah Selesai Dibaca</h2>
+            <div id="completed" class="book-items"></div>
+            <div class="completed"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
